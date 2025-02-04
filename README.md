@@ -18,4 +18,4 @@ Librería para crear archivos de excel
 Ing. Adrian Vera
 
 ## Vitacora de cambios
-- 1.0.0 Subida inicial
+- 1.0.1 Subida inicial
