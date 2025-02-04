@@ -7,13 +7,14 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>EpsilonSonft.Tools.MyExcelReporter</PackageId>
     <Title>EpsilonSonft.Tools.MyExcelReporter</Title>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Ing. Adrian Vera</Authors>
     <Company>Epsilon Software SRL</Company>
     <Product>EpsilonSonft.Tools.MyExcelReporter</Product>
     <Description>Librería para generar archivos de excel</Description>
     <Copyright>2024</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>AgregarTabla es emulada, ahora internamente es igual que AgregarTablaSinFormato</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

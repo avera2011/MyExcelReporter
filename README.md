@@ -19,3 +19,4 @@ Ing. Adrian Vera
 
 ## Vitacora de cambios
 - 1.0.1 Subida inicial
+- 1.0.2 AgregarTabla ahora internamente es la misma que AgregarTablaSinFormato
