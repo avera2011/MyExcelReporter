@@ -1,0 +1,21 @@
+﻿version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 8.0 # O la versión que estés usando
+    commands:
+      - echo "Instalando dependencias"
+      - dotnet tool install -g AWS.CodeArtifact.NuGet.CredentialProvider
+  pre_build:
+    commands:
+      - echo "Configurando CodeArtifact como fuente de NuGet"
+      - export CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain epsilonsoft-packages --domain-owner 199833193089 --query authorizationToken --output text)
+      - dotnet nuget add source --name CodeArtifact --username aws --password $CODEARTIFACT_AUTH_TOKEN --store-password-in-clear-text https://epsilonsoft-packages-199833193089.d.codeartifact.us-east-1.amazonaws.com/nuget/EpsilonTools/v3/index.json
+  build:
+    
+    commands:
+      - echo "Compilando el proyecto"
+      - dotnet publish -c Release
+      - echo "Subiendo el paquete a CodeArtifact"
+      - dotnet nuget push bin/Release/*.nupkg --source CodeArtifact --api-key $CODEARTIFACT_AUTH_TOKEN

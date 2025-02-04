@@ -1,0 +1,21 @@
+desde el terminal (POWERSHELL)
+se arranca desde el punto 2 si es modificacion o update
+
+
+1 instalar:
+	dotnet tool install -g AWS.CodeArtifact.NuGet.CredentialProvider
+	dotnet codeartifact-creds install
+2 configurar acceso...usar perfil que usa AWS toolkit
+	dotnet codeartifact-creds configure set profile [profile_name]
+
+3 cambiar version en las propiedades del proyecto o doble click 
+	e incluir los cambios en la vitacora del readme
+
+4 crear paquete:
+	compilar release
+	ejecutar dotnet pack
+
+5 publicar en aws debe correrse en el compilador del pipeline:
+
+	dotnet nuget push D:\DESARROLLO\DBConnector\bin\Release\EpsilonSoft.Tools.DbConnector.1.0.1.nupkg --source epsilontools
+	
